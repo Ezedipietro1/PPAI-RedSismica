@@ -10,6 +10,7 @@ namespace PPAI_RedSismica.Entidad
     {
         private string nombreUsuario;
         private string contraseña;
+        private Empleado empleado;
 
         public string NombreUsuario
         {
@@ -21,6 +22,17 @@ namespace PPAI_RedSismica.Entidad
         {
             get { return contraseña; }
             set { contraseña = value; }
+        }
+
+        public Empleado Empleado
+        {
+            get { return empleado; }
+            set { empleado = value; }
+        }
+
+        public Empleado getRILogueado()
+        {
+            return empleado;        
         }
     }
 }

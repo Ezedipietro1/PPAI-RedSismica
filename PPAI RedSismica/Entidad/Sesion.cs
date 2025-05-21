@@ -10,6 +10,7 @@ namespace PPAI_RedSismica.Entidad
     {
         private DateTime fechaHoraInicio;
         private DateTime fechaHoraFin;
+        private Usuario usuario;
 
         public DateTime FechaHoraInicio
         {
@@ -21,6 +22,15 @@ namespace PPAI_RedSismica.Entidad
             get { return fechaHoraFin; }
             set { fechaHoraFin = value; }
         }
+        public Usuario Usuario
+        {
+            get { return usuario; }
+            set { usuario = value; }
+        }   
 
+        public Empleado obtenerRILogueado()
+        {
+            return  Usuario.getRILogueado();
+        }
     }
 }
