@@ -14,7 +14,7 @@ namespace PPAI_RedSismica.Daos
         {
             List<CambioEstado> listaCambioEstado = new List<CambioEstado>();
 
-            string conexionstring = "server= localhost ; database= redSismica ; integrated security= true";
+            string conexionstring = "server= localhost ; database= RedSismica ; integrated security= true";
             SqlConnection conexion = new SqlConnection(conexionstring);
             conexion.Open();
             string query = @"SELECT * FROM CambioEstado";

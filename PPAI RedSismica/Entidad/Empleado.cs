@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPAI_RedSismica.Daos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,10 @@ namespace PPAI_RedSismica.Entidad
         { 
             get { return mail; } 
             set { mail = value; } 
+        }
+        public static List<Empleado> ObtenerTodas()
+        {
+            return EmpleadoDao.cargarEmpleado();
         }
     }
 }

@@ -8,29 +8,28 @@ using System.Threading.Tasks;
 
 namespace PPAI_RedSismica.Daos
 {
-    internal class EstacionSismologicaDao
+    internal class MotivoTipoDao
     {
-        public static List<EstacionSismologica> cargarEstacionSismologica()
+        public static List<MotivoTipo> cargarMotivoTipo()
         {
-            List<EstacionSismologica> listaEstacionSismologica = new List<EstacionSismologica>();
+            List<MotivoTipo> listaMotivoTipo = new List<MotivoTipo>();
 
             string conexionstring = "server= localhost ; database= RedSismica ; integrated security= true";
             SqlConnection conexion = new SqlConnection(conexionstring);
             conexion.Open();
-            string query = @"SELECT * FROM EstacionSismologica";
+            string query = @"SELECT * FROM MotivoTipo";
             SqlCommand comando = new SqlCommand(query, conexion);
             SqlDataReader dr = comando.ExecuteReader();
             while (dr.Read())
             {
-                EstacionSismologica p = new EstacionSismologica();
-                p.CodigoEstacion = dr.GetInt32(0);
-                p.Nombre = dr.GetString(1);
+                MotivoTipo p = new MotivoTipo();
+                p.Descripcion = dr.GetString(0);
 
-                listaEstacionSismologica.Add(p);
+                listaMotivoTipo.Add(p);
             }
 
             conexion.Close();
-            return listaEstacionSismologica;
+            return listaMotivoTipo;
         }
     }
 }

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// para obtener la lista de las entidades usamos --> var lista = OrdenInspeccion.ObtenerTodas();
+
 namespace PPAI_RedSismica.Negocio
 {
     internal class GestorAdmInspeccion

@@ -8,28 +8,32 @@ using System.Threading.Tasks;
 
 namespace PPAI_RedSismica.Daos
 {
-    internal class EmpleadoDao
+    internal class OrdenInspeccionDao
     {
-        public static List<Empleado> cargarEmpleado()
+        public static List<OrdenInspeccion> cargarOrdenInspeccion()
         {
-            List<Empleado> listaEmpleado = new List<Empleado>();
+            List<OrdenInspeccion> listaOrdenInspeccion = new List<OrdenInspeccion>();
 
             string conexionstring = "server= localhost ; database= RedSismica ; integrated security= true";
             SqlConnection conexion = new SqlConnection(conexionstring);
             conexion.Open();
-            string query = @"SELECT * FROM Empleado";
+            string query = @"SELECT * FROM OrdenInspeccion";
             SqlCommand comando = new SqlCommand(query, conexion);
             SqlDataReader dr = comando.ExecuteReader();
             while (dr.Read())
             {
-                Empleado p = new Empleado();
-                p.Mail = dr.GetString(0);
+                OrdenInspeccion p = new OrdenInspeccion();
+                p.FechaHoraInicio = dr.GetDateTime(0);
+                p.FechaHoraCierre = dr.GetDateTime(1);
+                p.FechaHoraFinalizacion = dr.GetDateTime(2);
+                p.NroOrden = dr.GetInt32(3);
+                p.ObservacionCierre = dr.GetString(4);
 
-                listaEmpleado.Add(p);
+                listaOrdenInspeccion.Add(p);
             }
 
             conexion.Close();
-            return listaEmpleado;
+            return listaOrdenInspeccion;
         }
     }
 }

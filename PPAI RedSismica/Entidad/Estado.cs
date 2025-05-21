@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPAI_RedSismica.Daos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,10 @@ namespace PPAI_RedSismica.Entidad
         { 
             get { return ambito; } 
             set { ambito = value; } 
-        }  
+        }
+        public static List<Estado> ObtenerTodas()
+        {
+            return EstadoDao.cargarEstado();
+        }
     }
 }

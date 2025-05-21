@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPAI_RedSismica.Daos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,10 @@ namespace PPAI_RedSismica.Entidad
         public Empleado obtenerRILogueado()
         {
             return  Usuario.getRILogueado();
+        }
+        public static List<Sesion> ObtenerTodas()
+        {
+            return SesionDao.cargarSesion();
         }
     }
 }

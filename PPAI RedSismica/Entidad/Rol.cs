@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPAI_RedSismica.Daos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,10 @@ namespace PPAI_RedSismica.Entidad
         {  
             get { return nombre; } 
             set { nombre = value; } 
+        }
+        public static List<Rol> ObtenerTodas()
+        {
+            return RolDao.cargarRol();
         }
     }
 }

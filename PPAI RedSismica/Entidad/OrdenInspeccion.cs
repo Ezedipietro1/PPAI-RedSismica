@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PPAI_RedSismica.Daos;
+using System.Collections.Generic;
 
 namespace PPAI_RedSismica.Entidad
 {
@@ -12,7 +14,7 @@ namespace PPAI_RedSismica.Entidad
         private DateTime fechaHoraFinalizacion;
         private DateTime fechaHoraInicio;
         private int nroOrden;
-        private string observacionCliente;
+        private string observacionCierre;
 
         public DateTime FechaHoraCierre 
         { 
@@ -35,10 +37,14 @@ namespace PPAI_RedSismica.Entidad
             get { return nroOrden; } 
             set { nroOrden = value; } 
         }
-        public string ObservacionCliente
+        public string ObservacionCierre
         {
-            get { return observacionCliente; }
-            set { observacionCliente = value; }
+            get { return observacionCierre; }
+            set { observacionCierre = value; }
+        }
+        public static List<OrdenInspeccion> ObtenerTodas()
+        {
+            return OrdenInspeccionDao.cargarOrdenInspeccion();
         }
     }
 }
