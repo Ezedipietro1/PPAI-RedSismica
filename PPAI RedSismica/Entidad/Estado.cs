@@ -27,5 +27,17 @@ namespace PPAI_RedSismica.Entidad
         {
             return EstadoDao.cargarEstado();
         }
+
+        public static bool sosCompletamenteRealizada(Estado estadoActual)
+        {
+            if (estadoActual.nombreEstado == "Completamente Realizada")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

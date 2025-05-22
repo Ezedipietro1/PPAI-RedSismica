@@ -32,6 +32,7 @@ namespace PPAI_RedSismica.Negocio
 
         public void buscarOrdenesInspeccion(Empleado riLogueado)
         {
+            OrdenInspeccion.esDeRILogueado(riLogueado);
         }
     }
 }

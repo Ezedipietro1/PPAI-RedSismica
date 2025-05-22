@@ -26,5 +26,15 @@ namespace PPAI_RedSismica.Entidad
         {
             return EstacionSismologicaDao.cargarEstacionSismologica();
         }
+
+        public static string getNombre(EstacionSismologica estacion)
+        {
+            return estacion.nombre;
+        }
+
+        public static int obtenerIDSismografo(EstacionSismologica estacion)
+        {
+            return Sismografo.getID(Sismografo.sosMiSismografo(estacion.codigoEstacion));
+        }
     }
 }
